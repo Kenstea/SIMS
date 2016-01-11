@@ -1,0 +1,45 @@
+﻿<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h2>Add Items</h2>
+        <wait-cursor display-when="vm.isBusy"></wait-cursor>
+        <div class="alert alert-danger" ng-show="vm.errorMessage">{{ vm.errorMessage }}</div>
+        <div class="alert alert-success" ng-show="vm.successMessage">{{ vm.successMessage }}</div>
+        <form  novalidate name="newItemForm" ng-submit="vm.addItem()">
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control" name="Name" ng-model="vm.newItem.Name" placeholder="Enter Item Name" required ng-minlength="5" />
+                <span ng-show="newItemForm.Name.$error.required" class="text-warning">Name is required.</span>
+                <span class="text-danger" ng-show="newItemForm.Name.$error.minlength">Must be 5 characters or more</span>
+            </div>
+            <div class="form-group">
+                <label for="Quantity">Current Quantity</label>
+                <input type="number" class="form-control" name="Quantity" ng-model="vm.newItem.Quantity" required />
+                    <span ng-show="newItemForm.Quantity.$error.required" class="text-warning">Quantity is required.</span>
+            </div>
+            <div class="form-group">
+                <label for="EndangeredQuantity">Endangered Quantity</label>
+                <input type="number" name="EndangeredQuantity" class="form-control" ng-model="vm.newItem.EndangeredQuantity" required />
+                <span ng-show="newItemForm.EndangeredQuantity.$error.required" class="text-warning">Endangered Quantity is required.</span>
+            </div>
+            <div class="form-group">
+                <label for="Expected">Scheduled Production Rate</label>
+                <input name="Expected" type="number" class="form-control" ng-model="vm.newItem.Expected" required />
+                <span ng-show="newItemForm.Expected.$error.required" class="text-warning">Scheduled Production Rate is required.</span>
+            </div>
+            <div class="form-group">
+                <label for="Actual">Received Quantity from Production</label>
+                <input name="Actual" type="number" class="form-control" ng-model="vm.newItem.Actual" required />
+                <span ng-show="newItemForm.Actual.$error.required" class="text-warning">Received Quantity is required.</span>
+            </div>
+            <div class="form-group">
+                <label for="Promised">Current Demand</label>
+                <input name="Promised" type="number" class="form-control" ng-model="vm.newItem.Promised" required />
+                <span ng-show="newItemForm.Promised.$error.required" class="text-warning">Current Demand is required.</span>
+            </div>
+            <div class="form-group">
+                <a href="#/Forecast" class="btn btn-default">Cancel</a>
+                <input type="submit" value="Add Item" class="btn btn-success" ng-disabled="newItemForm.$invalid" />
+            </div>
+        </form>
+    </div>
+</div>

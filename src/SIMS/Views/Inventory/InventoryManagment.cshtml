@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Manage Inventory Page";
+}
+@section Scripts {
+    <script src="~/lib/underscore/underscore-min.js"></script>
+    <script src="~/lib/angular/angular.min.js"></script>
+    <script src="~/lib/angular-route/angular-route.min.js"></script>
+    <script src="~/js/simpleControls.js"></script>
+    <script src="~/js/app-sims.js"></script>
+    <script src="~/js/addInventoryController.js"></script>
+    <script src="~/js/deleteInventoryController.js"></script>
+    <script src="~/js/updateInventoryController.js"></script>
+    <script src="~/js/readInventoryController.js"></script>
+}
+<div class="row" ng-app="app-sims">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 centered">
+                <div class="btn-group btn-group-justified" role="group">
+                    <div class="btn-group" role="group">
+                        <a href="#/Add" class="btn btn-primary">Add an item</a>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <a href="#/Delete" class="btn btn-primary">Delete an item</a>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <a href="#/Update" class="btn btn-primary">Update an item</a>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <a href="#/Forecast" class="btn btn-primary">Browse Inventory</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div ng-view></div>
+        </div>
+    </div>
+
+    
+
+</div>
