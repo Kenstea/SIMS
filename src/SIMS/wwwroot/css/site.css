@@ -77,3 +77,20 @@
 .search-box {
     margin-bottom: 15px;
 }
+
+.welcome-statement {
+    font-size: 6em;
+    z-index: 1;
+}
+
+.welcome-container {
+    border-bottom: 3px solid black;
+    
+    padding-bottom: 100px;
+    margin-top: -22px;
+}
+
+.instruction-container {
+    border-top: 3px solid black;
+    margin-top: 25px;
+}
