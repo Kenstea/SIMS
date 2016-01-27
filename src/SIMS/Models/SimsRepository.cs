@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
 
 namespace SIMS.Models
 {
@@ -56,7 +57,8 @@ namespace SIMS.Models
         {
             try
             {
-                return _context.Items.OrderBy(i => i.Name).ToList();
+                var user = UserManager<ApplicationUser>.;
+                return _context.Items.Where(i => i.UserId == ApplicationUser.Identity.Name).OrderBy(i => i.Name).ToList();
             }
             catch (Exception ex)
             {
